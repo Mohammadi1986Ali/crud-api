@@ -5,13 +5,13 @@ info:
   description: Product APIs for managing products
   version: 1.0.0
 tags:
-  - name: Products
+  - name: Product
     description: Product management APIs
 paths:
   /api/v1/products:
     get:
       tags:
-        - Products
+        - Product
       summary: Get all products
       operationId: getAllProducts
       responses:
@@ -25,7 +25,7 @@ paths:
                   $ref: '#/components/schemas/ProductResponse'
     post:
       tags:
-        - Products
+        - Product
       summary: Create a new product
       operationId: createProduct
       requestBody:
@@ -45,7 +45,7 @@ paths:
   /api/v1/products/{productId}:
     get:
       tags:
-        - Products
+        - Product
       summary: Get product by productId
       operationId: getProductById
       parameters:
@@ -61,7 +61,7 @@ paths:
           description: Product did not found
     put:
       tags:
-        - Products
+        - Product
       summary: Replace product
       operationId: updateProduct
       parameters:
@@ -85,7 +85,7 @@ paths:
           description: Product did not found
     patch:
       tags:
-        - Products
+        - Product
       summary: Partially update product
       operationId: patchProduct
       parameters:
@@ -109,7 +109,7 @@ paths:
           description: Product did not found
     delete:
       tags:
-        - Products
+        - Product
       summary: Delete product
       operationId: deleteProduct
       parameters:

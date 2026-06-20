@@ -1,4 +1,4 @@
-package com.nexora.crudapi;
+package com.nexora.software.crudapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
