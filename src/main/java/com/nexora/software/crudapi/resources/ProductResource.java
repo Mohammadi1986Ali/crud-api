@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 public class ProductResource implements ProductApi {
@@ -28,7 +29,7 @@ public class ProductResource implements ProductApi {
     }
 
     @Override
-    public ResponseEntity<Void> deleteProduct(Integer productId) {
+    public ResponseEntity<Void> deleteProduct(UUID productId) {
         productService.deleteProduct(productId);
         return ResponseEntity.noContent().build();
     }
@@ -39,17 +40,17 @@ public class ProductResource implements ProductApi {
     }
 
     @Override
-    public ResponseEntity<ProductResponse> getProductById(Integer productId) {
+    public ResponseEntity<ProductResponse> getProductById(UUID productId) {
         return ResponseEntity.ok(productService.getProductById(productId));
     }
 
     @Override
-    public ResponseEntity<ProductResponse> patchProduct(Integer productId, PatchProductRequest request) {
+    public ResponseEntity<ProductResponse> patchProduct(UUID productId, PatchProductRequest request) {
         return ResponseEntity.ok(productService.patchProduct(productId, request));
     }
 
     @Override
-    public ResponseEntity<ProductResponse> updateProduct(Integer productId, UpdateProductRequest request) {
+    public ResponseEntity<ProductResponse> updateProduct(UUID productId, UpdateProductRequest request) {
         return ResponseEntity.ok(productService.updateProduct(productId, request));
     }
 }

@@ -6,18 +6,19 @@ import com.nexora.software.generated.v1.model.ProductResponse;
 import com.nexora.software.generated.v1.model.UpdateProductRequest;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface ProductService {
 
     ProductResponse createProduct(CreateProductRequest request);
 
-    void deleteProduct(Integer productId);
+    void deleteProduct(UUID productId);
 
     List<ProductResponse> getAllProducts();
 
-    ProductResponse getProductById(Integer productId);
+    ProductResponse getProductById(UUID productId);
 
-    ProductResponse patchProduct(Integer productId, PatchProductRequest request);
+    ProductResponse patchProduct(UUID productId, PatchProductRequest request);
 
-    ProductResponse updateProduct(Integer productId, UpdateProductRequest request);
+    ProductResponse updateProduct(UUID productId, UpdateProductRequest request);
 }
