@@ -20,6 +20,9 @@
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <openapi-generator-maven-plugin.version>5.1.0</openapi-generator-maven-plugin.version>
+        <openapi-generator.root.package>com.nexora.software.generated</openapi-generator.root.package>
     </properties>
     <dependencies>
         <dependency>
@@ -51,6 +54,47 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <version>${openapi-generator-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>generate-users-api</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <generatorName>spring</generatorName>
+                            <library>spring-boot</library>
+                            <inputSpec>
+                                ${project.basedir}/src/main/resources/open-api/product.yaml
+                            </inputSpec>
+                            <output>${project.build.directory}/generated-sources</output>
+
+                            <apiPackage>${openapi-generator.root.package}.v1.api</apiPackage>
+                            <modelPackage>${openapi-generator.root.package}.v1.model</modelPackage>
+
+                            <enablePostProcessFile>true</enablePostProcessFile>
+                            <skipOverwrite>false</skipOverwrite>
+                            <configOptions>
+                                <interfaceOnly>true</interfaceOnly>
+                                <sourceFolder>openapi-generator</sourceFolder>
+                                <useBeanValidation>true</useBeanValidation>
+                                <dateLibrary>java8</dateLibrary>
+                                <serializableModel>true</serializableModel>
+                                <useTags>true</useTags>
+                            </configOptions>
+                            <typeMappings>
+                                <typeMapping>OffsetDateTime=LocalDateTime</typeMapping>
+                            </typeMappings>
+                            <importMappings>
+                                <importMapping>java.time.OffsetDateTime=java.time.LocalDateTime</importMapping>
+                            </importMappings>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
