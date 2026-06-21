@@ -6,6 +6,7 @@ import com.nexora.software.generated.v1.model.CreateProductRequest;
 import com.nexora.software.generated.v1.model.PatchProductRequest;
 import com.nexora.software.generated.v1.model.ProductResponse;
 import com.nexora.software.generated.v1.model.UpdateProductRequest;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,14 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.UUID;
 
+@RequiredArgsConstructor
 @RestController
 public class ProductResource implements ProductApi {
-
     private final ProductService productService;
-
-    public ProductResource(ProductService productService) {
-        this.productService = productService;
-    }
 
     @Override
     public ResponseEntity<ProductResponse> createProduct(CreateProductRequest request) {
