@@ -1,4 +1,4 @@
-package com.nexora.software.crudapi.config;
+package com.nexora.software.openapi.config;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;

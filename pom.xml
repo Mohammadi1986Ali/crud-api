@@ -12,9 +12,9 @@
     </parent>
 
     <groupId>com.nexora.software</groupId>
-    <artifactId>crud-api</artifactId>
+    <artifactId>open-api</artifactId>
     <version>1.0.1</version>
-    <name>crud-api</name>
+    <name>open-api</name>
 
     <properties>
         <java.version>21</java.version>

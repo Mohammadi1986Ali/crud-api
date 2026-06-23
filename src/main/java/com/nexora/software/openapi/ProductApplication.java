@@ -1,4 +1,4 @@
-package com.nexora.software.crudapi;
+package com.nexora.software.openapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

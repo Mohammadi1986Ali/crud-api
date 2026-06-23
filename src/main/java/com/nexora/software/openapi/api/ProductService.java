@@ -1,4 +1,4 @@
-package com.nexora.software.crudapi.api;
+package com.nexora.software.openapi.api;
 
 import com.nexora.software.generated.v1.model.CreateProductRequest;
 import com.nexora.software.generated.v1.model.PatchProductRequest;

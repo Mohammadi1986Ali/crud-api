@@ -1,6 +1,6 @@
-package com.nexora.software.crudapi.resources;
+package com.nexora.software.openapi.resources;
 
-import com.nexora.software.crudapi.api.ProductService;
+import com.nexora.software.openapi.api.ProductService;
 import com.nexora.software.generated.v1.api.ProductApi;
 import com.nexora.software.generated.v1.model.CreateProductRequest;
 import com.nexora.software.generated.v1.model.PatchProductRequest;
